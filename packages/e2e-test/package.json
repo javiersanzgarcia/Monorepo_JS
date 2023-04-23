@@ -1,0 +1,13 @@
+{
+  "name": "@demo/cypress",
+  "version": "0.0.0",
+  "description": "E2E for demo project",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "10.6.0",
+    "typescript": "4.7.4"
+  }
+}

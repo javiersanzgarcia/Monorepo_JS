@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "types": ["node", "jest"],
+    "outDir": "./dist",
+    "baseUrl": "src",
+    "noEmit": false,
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
+  "include": ["./src"]
+}

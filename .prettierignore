@@ -1,0 +1,14 @@
+.husky/**
+build/**
+dist/**
+node_modules/**
+public/**
+
+/packages/frontend/dist/**
+/packages/frontend/node_modules/**
+
+/packages/e2e-test/dist/**
+/packages/e2e-test/node_modules/**
+
+/packages/commons/dist/**
+/packages/commons/node_modules/**

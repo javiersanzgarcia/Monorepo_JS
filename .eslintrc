@@ -1,0 +1,99 @@
+{
+  "env": {
+    "es2022": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "standard"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "jest"],
+  "rules": {
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "arrow-body-style": ["error", "as-needed"],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-argument": "off"
+  },
+  "ignorePatterns": [
+    "packages/e2e-test/cypress/support/**/*.ts",
+    "packages/*/**/*.config.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["packages/commons/**/*.ts"],
+      "parserOptions": {
+        "project": ["./packages/commons/tsconfig.json"]
+      },
+      "rules": {
+        "@typescript-eslint/no-use-before-define": ["error"]
+      }
+    },
+    {
+      "files": ["packages/frontend/**/*.{ts,tsx}"],
+      "env": {
+        "browser": true
+      },
+      "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended"],
+      "plugins": ["react", "react-hooks"],
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "project": ["./packages/frontend/tsconfig.json"]
+      },
+      "settings": {
+        "react": { "version": "detect" }
+      }
+    },
+    {
+      "files": ["packages/e2e-test/**/*.ts"],
+      "extends": ["plugin:cypress/recommended"],
+      "plugins": ["cypress"],
+      "rules": {
+        "jest/expect-expect": "off"
+      }
+    }
+  ]
+}

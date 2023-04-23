@@ -1,0 +1,41 @@
+{
+  "name": "@demo/middleware",
+  "version": "0.0.0",
+  "description": "Back End / Middleware for Demo project",
+  "private": true,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.11.0"
+  },
+  "scripts": {
+    "dev": "nodemon -r tsconfig-paths/register -r ts-node ./src/index.ts",
+    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.12",
+    "@types/express": "4.17.13",
+    "@types/morgan": "1.9.3",
+    "@types/node": "18.7.9",
+    "nodemon": "2.0.19",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.0.0",
+    "tscpaths": "0.0.9",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "axios": "0.27.2",
+    "body-parser": "1.20.0",
+    "cors": "2.8.5",
+    "dotenv": "16.0.1",
+    "express": "4.18.1",
+    "morgan": "1.10.0"
+  }
+}
